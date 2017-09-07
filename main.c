@@ -90,13 +90,13 @@ int main()
     }
 
     CDL_COUNT(head, elt, count);
-    printf("%d number of elements in list.", count);
+    printf("%d number of elements in list.\n", count);
 
     el etmp;
-    memcpy(&etmp.bname, "WES\n", 5);
+    memcpy(&etmp.bname, "8\n", 3);
     CDL_SEARCH(head, elt, &etmp, namecmp);
     if (elt) {
-        printf("%s Found!\n", elt->bname);
+        printf("Found!:%s", elt->bname);
     }
 
     CDL_FOREACH_SAFE(head, elt, tmp1, tmp2) {
