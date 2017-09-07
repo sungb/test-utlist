@@ -7,11 +7,11 @@
 
 #define BUFLEN  20
 
-typedef uint8_t EmberEUI64[8];
+typedef uint8_t EUI[8];
 
 typedef struct el {
     char bname[BUFLEN];
-    EmberEUI64 eui;
+    EUI eui;
     int endpoint;
     struct el *next, *prev;
 } el;
