@@ -87,7 +87,7 @@ int main()
 
     CDL_FOREACH(head, elt) {
         printf("%s\n", elt->bname);
-    }
+    };
 
     CDL_COUNT(head, elt, count);
     printf("%d number of elements in list.\n", count);
