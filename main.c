@@ -7,6 +7,9 @@
 
 #define BUFLEN  20
 
+#define CDL_FOREACH_REV(tail,el,prev)                                                             \
+    for ((el)=(tail);el;(el)=(((el)->prev==(tail)) ? NULL : (el)->prev))
+
 typedef uint8_t EUI[8];
 
 typedef struct el {
@@ -85,7 +88,13 @@ int main()
     printf("Sort \n");
     CDL_SORT(head, namecmp);
 
+    printf("list \n");
     CDL_FOREACH(head, elt) {
+        printf("%s\n", elt->bname);
+    };
+
+    printf("Reverse list \n");
+    CDL_FOREACH_REV(head->prev, elt, prev) {
         printf("%s\n", elt->bname);
     };
 
